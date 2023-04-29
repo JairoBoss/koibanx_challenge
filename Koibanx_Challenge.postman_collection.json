@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "22586d55-0ce3-493a-9882-032cf11f4971",
+		"name": "Koibanx_Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18211740"
+	},
+	"item": [
+		{
+			"name": "Upload excel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/C:/Users/jairo/Imágenes/20230224_125509.jpg",
+							"disabled": true
+						},
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/C:/Users/jairo/Downloads/Koibanx.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8081/excel/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"excel",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get file status & details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/excel/644cbf72e3bd8fc422caded1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"excel",
+						"644cbf72e3bd8fc422caded1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get paged error",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fileId\": \"644cbd2df556d4c62bb64c73\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/error/100/107",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"error",
+						"100",
+						"107"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get paged records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fileId\": \"644cbd2df556d4c62bb64c73\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/record/1/863",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"record",
+						"1",
+						"863"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
