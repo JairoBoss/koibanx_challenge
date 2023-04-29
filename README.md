@@ -2,6 +2,8 @@
 
 API for challenge backend
 
+Deploy: https://koibanx.software4all.dev
+
 # Configurar variables de entorno
 
 Crear archivo .env a nivel raiz de la carpeta y colocar las siguientes variables de entorno
